@@ -9,3 +9,7 @@ Roomba.prototype.inputStartPosition = function(x, y) {
   this._startPosition[1] = y;
   return [x, y];
 };
+
+Roomba.prototype.startPosition = function() {
+  return this._startPosition;
+};
