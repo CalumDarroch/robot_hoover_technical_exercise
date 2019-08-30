@@ -56,3 +56,8 @@ As a user,
 So that my Roomba can complete its journey as planned,
 I need the room size to be saved after being set.
 ```
+```
+As a user,
+So that my Roomba can navigate successfully,
+I need it to record its initial position.
+```

@@ -1,20 +1,20 @@
 'use strict';
 
-describe('Feature test:', function(){
+describe('Feature test:', function() {
   var room;
 
-  beforeEach(function(){
+  beforeEach(function() {
     room = new Room();
   });
 
-  it('rooms can be assigned X and Y coordinates sizes', function(){
+  it('rooms can be assigned X and Y coordinates sizes', function() {
     expect(room.inputSize(4, 5)).toEqual([4, 5]);
     expect(room.inputSize(7, 3)).toEqual([7, 3]);
     expect(room.inputSize(19, 0)).toEqual([19, 0]);
     expect(room.inputSize(154, 896746)).toEqual([154, 896746]);
   });
 
-  it('size of the room can be recorded after input', function(){
+  it('size of the room can be recorded after input', function() {
     room.inputSize(12, 6);
     expect(room.size()).toEqual([12, 6]);
     room.inputSize(0, 2095234);
