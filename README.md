@@ -51,3 +51,8 @@ As a user,
 So that my Roomba can navigate a room,
 I want to be able to input the size of the room.
 ```
+```
+As a user,
+So that my Roomba can complete its journey as planned,
+I need the room size to be saved after being set.
+```
