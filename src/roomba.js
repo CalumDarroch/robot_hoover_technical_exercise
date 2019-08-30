@@ -2,6 +2,6 @@
 
 function Roomba() {};
 
-Roomba.prototype.inputStartPosition = function() {
-  return [4, 5];
+Roomba.prototype.inputStartPosition = function(x, y) {
+  return [x, y];
 };

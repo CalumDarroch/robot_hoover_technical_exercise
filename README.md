@@ -61,3 +61,4 @@ As a user,
 So that my Roomba can navigate successfully,
 I need it to record its initial position.
 ```
+First edge case: what if start position is not within the bounds of the room? Will need to be tackled.
