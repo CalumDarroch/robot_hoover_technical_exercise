@@ -46,7 +46,7 @@ The program will then return a simple 2-line output, for example:
 
 The first thing I will do with this program is break down the problem into specific user stories based upon the requirements, tackling the smallest issue first and using TDD to drive the increasing complexity of the program.
 
-1. ```
+```
 As a user,
 So that my Roomba can navigate a room,
 I want to be able to input the size of the room.

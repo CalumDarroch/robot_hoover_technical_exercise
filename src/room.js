@@ -2,6 +2,6 @@
 
 function Room() {};
 
-Room.prototype.inputSize = function(X, Y){
-  return [4, 5];
+Room.prototype.inputSize = function(x, y){
+  return [x, y];
 };
