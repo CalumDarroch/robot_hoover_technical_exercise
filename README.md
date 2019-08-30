@@ -41,3 +41,13 @@ The program will then return a simple 2-line output, for example:
 ```
 - Line 1 is the final position of the Roomba after it has completed all of its instructions.
 - Line 2 is the number of patches of dirt it successfully hoovered up (i.e. occupied the same space as at some point on its journey).
+
+## Execution
+
+The first thing I will do with this program is break down the problem into specific user stories based upon the requirements, tackling the smallest issue first and using TDD to drive the increasing complexity of the program.
+
+1. ```
+As a user,
+So that my Roomba can navigate a room,
+I want to be able to input the size of the room.
+```
