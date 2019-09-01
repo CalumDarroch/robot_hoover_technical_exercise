@@ -3,6 +3,7 @@
 function Room() {
   this._size = [];
   this._hooverPosition = [];
+  this._dirtPatches = [];
 };
 
 Room.prototype.inputSize = function(x, y) {
@@ -28,3 +29,8 @@ Room.prototype.inputHooverPosition = function(x, y) {
 Room.prototype.hooverPosition = function() {
   return this._hooverPosition;
 };
+
+Room.prototype.inputDirtPatch = function(x, y) {
+  var dirtPatch = [x, y];
+  return dirtPatch;
+}

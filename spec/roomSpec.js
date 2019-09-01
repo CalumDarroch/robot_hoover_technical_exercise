@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Feature test:', function() {
+describe('Feature tests:', function() {
   var room;
 
   beforeEach(function() {
@@ -33,6 +33,10 @@ describe('Feature test:', function() {
     var error = "Hoover cannot be placed outside of the room";
     room.inputSize(5, 5);
     expect(function() { room.inputHooverPosition(5, 6) }).toThrow(error);
+  });
+
+  it('coordinates of patches of dirt can be input', function () {
+    expect(room.inputDirtPatch(1, 3)).toEqual([1, 3]);
   });
 
 });
