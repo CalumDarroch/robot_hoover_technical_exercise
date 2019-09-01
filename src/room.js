@@ -35,6 +35,8 @@ Room.prototype.moveHoover = function(direction) {
     this._hooverPosition[1] += 1;
   } else if (direction === "S") {
     this._hooverPosition[1] -= 1;
+  } else if (direction === "E") {
+    this._hooverPosition[0] += 1;
   }
   return this._hooverPosition;
 }
