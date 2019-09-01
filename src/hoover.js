@@ -1,15 +1,15 @@
 'use strict';
 
-function Roomba() {
+function Hoover() {
   this._startPosition = [];
 };
 
-Roomba.prototype.inputStartPosition = function(x, y) {
+Hoover.prototype.inputStartPosition = function(x, y) {
   this._startPosition[0] = x;
   this._startPosition[1] = y;
   return [x, y];
 };
 
-Roomba.prototype.startPosition = function() {
+Hoover.prototype.startPosition = function() {
   return this._startPosition;
 };
