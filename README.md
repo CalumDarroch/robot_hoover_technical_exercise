@@ -88,4 +88,4 @@ As a user,
 So that I can know how effective my instructions have been,
 I want to be able to see how many dirt patches the hoover has hoovered up.
 ```
-This also introduces another edge case: we don't want the hoover to count the same dirt patch twice!
+This also introduces another edge case: we don't want the hoover to count the same dirt patch twice! Once a patch has been hit it will be removed from the array of dirt patches.

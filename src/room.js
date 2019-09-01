@@ -68,6 +68,8 @@ Room.prototype.hitDirtPatch = function(hooverPosition) {
     if (hooverPosition[0] === this._dirtPatches[i][0] && hooverPosition[1] === this._dirtPatches[i][1]) {
       result = true;
       this._dirtPatchesHoovered += 1;
+      this._dirtPatches.splice(i, 1);
+      break;
     } else {
       result = false;
     }

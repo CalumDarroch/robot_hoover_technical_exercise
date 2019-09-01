@@ -89,6 +89,7 @@ describe('Feature tests:', function() {
 
   it('knows if the hoover has hit a dirt patch', function() {
     room.inputDirtPatch(2, 3);
+    room.inputDirtPatch(2, 5);
     expect(room.hitDirtPatch([2, 3])).toEqual(true);
     expect(room.hitDirtPatch([2, 4])).toEqual(false);
   });
@@ -101,5 +102,18 @@ describe('Feature tests:', function() {
     room.moveHoover("N");
     expect(room.dirtPatchesHoovered()).toEqual(2);
   })
+
+  it('removes a hoovered dirt patch from the dirt patches array', function() {
+    room.inputDirtPatch(2, 3);
+    room.inputDirtPatch(2, 4);
+    room.inputDirtPatch(2, 5);
+    expect(room.dirtPatches()).toEqual([[2, 3], [2, 4], [2, 5]]);
+    room.moveHoover("N");
+    expect(room.dirtPatches()).toEqual([[2, 4], [2, 5]]);
+    room.moveHoover("N");
+    expect(room.dirtPatches()).toEqual([[2, 5]]);
+    room.moveHoover("N");
+    expect(room.dirtPatches()).toEqual([]);
+  });
 
 });
