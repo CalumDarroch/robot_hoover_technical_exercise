@@ -5,6 +5,8 @@ describe('Feature tests:', function() {
 
   beforeEach(function() {
     room = new Room();
+    room.inputSize(5, 5);
+    room.inputHooverPosition(2, 2);
   });
 
   it('rooms can be assigned X and Y coordinates sizes', function() {
@@ -31,7 +33,6 @@ describe('Feature tests:', function() {
 
   it('hoover cannot be assigned a starting position outside of the room', function() {
     var error = "Hoover cannot be placed outside of the room";
-    room.inputSize(5, 5);
     expect(function() { room.inputHooverPosition(5, 6) }).toThrow(error);
   });
 
@@ -47,8 +48,6 @@ describe('Feature tests:', function() {
   });
 
   it('the hoovers Y position is modified by +1 if instructed to move North', function() {
-    room.inputSize(5, 5);
-    room.inputHooverPosition(2, 2);
     expect(room.moveHoover("N")).toEqual([2, 3]);
     room.inputSize(21, 18);
     room.inputHooverPosition(14, 6);
@@ -56,8 +55,6 @@ describe('Feature tests:', function() {
   });
 
   it('the hoovers Y position is modified by -1 if instructed to move South', function() {
-    room.inputSize(5, 5);
-    room.inputHooverPosition(2, 2);
     expect(room.moveHoover("S")).toEqual([2, 1]);
     room.inputSize(21, 18);
     room.inputHooverPosition(14, 6);
@@ -65,8 +62,6 @@ describe('Feature tests:', function() {
   });
 
   it('the hoovers X position is modified by +1 if instructed to move East', function() {
-    room.inputSize(5, 5);
-    room.inputHooverPosition(2, 2);
     expect(room.moveHoover("E")).toEqual([3, 2]);
     room.inputSize(21, 18);
     room.inputHooverPosition(14, 6);
@@ -74,8 +69,6 @@ describe('Feature tests:', function() {
   });
 
   it('the hoovers X position is modified by -1 if instructed to move West', function() {
-    room.inputSize(5, 5);
-    room.inputHooverPosition(2, 2);
     expect(room.moveHoover("W")).toEqual([1, 2]);
     room.inputSize(21, 18);
     room.inputHooverPosition(14, 6);
@@ -84,7 +77,6 @@ describe('Feature tests:', function() {
 
   it('hoover cannot move outside the bounds of the room', function() {
     var error = "Hoover cannot move outside of the room";
-    room.inputSize(5, 5);
     room.inputHooverPosition(5, 5);
     expect(function() { room.moveHoover("N") }).toThrow(error);
     room.inputHooverPosition(5, 0);
@@ -100,5 +92,14 @@ describe('Feature tests:', function() {
     expect(room.hitDirtPatch([2, 3])).toEqual(true);
     expect(room.hitDirtPatch([2, 4])).toEqual(false);
   });
+
+  it('records a tally of the number of patches hoovered up', function() {
+    room.inputDirtPatch(2, 3);
+    room.moveHoover("N");
+    expect(room.dirtPatchesHoovered()).toEqual(1);
+    room.inputDirtPatch(2, 4);
+    room.moveHoover("N");
+    expect(room.dirtPatchesHoovered()).toEqual(2);
+  })
 
 });
