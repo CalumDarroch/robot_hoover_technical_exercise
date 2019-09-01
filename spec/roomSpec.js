@@ -75,16 +75,15 @@ describe('Feature tests:', function() {
     expect(room.moveHoover("W")).toEqual([13, 6]);
   });
 
-  it('hoover cannot move outside the bounds of the room', function() {
-    var error = "Hoover cannot move outside of the room";
+  it('hoover will remain stationary if it tries to move outside the bounds of the room', function() {
     room.inputHooverPosition(5, 5);
-    expect(function() { room.moveHoover("N") }).toThrow(error);
+    expect(room.moveHoover("N")).toEqual([5, 5]);
     room.inputHooverPosition(5, 0);
-    expect(function() { room.moveHoover("S") }).toThrow(error);
+    expect(room.moveHoover("S")).toEqual([5, 0]);
     room.inputHooverPosition(5, 5);
-    expect(function() { room.moveHoover("E") }).toThrow(error);
+    expect(room.moveHoover("E")).toEqual([5, 5]);
     room.inputHooverPosition(0, 5);
-    expect(function() { room.moveHoover("W") }).toThrow(error);
+    expect(room.moveHoover("W")).toEqual([0, 5]);
   });
 
   it('knows if the hoover has hit a dirt patch', function() {

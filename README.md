@@ -42,6 +42,24 @@ The program will then return a simple 2-line output, for example:
 - Line 1 is the final position of the hoover after it has completed all of its instructions.
 - Line 2 is the number of patches of dirt it successfully hoovered up (i.e. occupied the same space as at some point on its journey).
 
+## Installation
+
+To install this project, first clone or download this repo to a directory of your choice.
+
+This project requires [Node.js](https://nodejs.org/en/) to run. If you don't have it, follow that link to install.
+
+Once installed, navigate to the directory and run:
+```
+npm init
+```
+This will initialize Node.js on the directory. It will ask you to verify the contents of the `package.json` file - just click 'yes' on everything.
+
+Now, to use the program, you can edit the contents of the `input.txt` file with your desired directions as above. To run the program, simply type:
+```
+node .
+```
+into your terminal, and you will see your results!
+
 ## Approach
 
 ### Business logic
@@ -91,3 +109,12 @@ So that I can know how effective my instructions have been,
 I want to be able to see how many dirt patches the hoover has hoovered up.
 ```
 This also introduces another edge case: we don't want the hoover to count the same dirt patch twice! Once a patch has been hit it will be removed from the array of dirt patches.
+
+
+Installed Node.js. Used `fs` module to split text file.
+
+Parsing: text is split around `\r\n`: you may need to change this for it to work on your system.
+
+Had to update Room with module pattern so it could be exported.
+
+Finally, refactor so no error thrown when hoover tries to move outside the room, it just stays stationary.

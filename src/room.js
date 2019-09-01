@@ -44,8 +44,6 @@ Room.prototype.moveHoover = function(direction) {
   } else if (direction === "W" && this._hooverPosition[0] > 0) {
     this._hooverPosition[0] -= 1;
     this.hitDirtPatch(this._hooverPosition);
-  } else {
-    throw "Hoover cannot move outside of the room";
   }
   return this._hooverPosition;
 }
@@ -79,4 +77,6 @@ Room.prototype.hitDirtPatch = function(hooverPosition) {
 
 Room.prototype.dirtPatchesHoovered = function() {
   return this._dirtPatchesHoovered;
-}
+};
+
+module.exports = Room;
