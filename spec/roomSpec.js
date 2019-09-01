@@ -39,4 +39,11 @@ describe('Feature tests:', function() {
     expect(room.inputDirtPatch(1, 3)).toEqual([1, 3]);
   });
 
+  it('dirt patches stored as an array of coordinate arrays', function() {
+    room.inputDirtPatch(1, 3);
+    room.inputDirtPatch(2, 4);
+    room.inputDirtPatch(6, 0);
+    expect(room.dirtPatches()).toEqual([[1, 3], [2, 4], [6, 0]])
+  })
+
 });

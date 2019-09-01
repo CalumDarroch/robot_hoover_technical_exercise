@@ -32,5 +32,10 @@ Room.prototype.hooverPosition = function() {
 
 Room.prototype.inputDirtPatch = function(x, y) {
   var dirtPatch = [x, y];
+  this._dirtPatches.push(dirtPatch);
   return dirtPatch;
+};
+
+Room.prototype.dirtPatches = function() {
+  return this._dirtPatches;
 }
