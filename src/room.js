@@ -16,9 +16,13 @@ Room.prototype.size = function() {
 };
 
 Room.prototype.inputHooverPosition = function(x, y) {
-  this._hooverPosition[0] = x;
-  this._hooverPosition[1] = y;
-  return [x, y];
+  if (x <= this._size[0] && y <= this._size[1]) {
+    this._hooverPosition[0] = x;
+    this._hooverPosition[1] = y;
+    return [x, y];
+  } else {
+  throw "Hoover cannot be placed outside of the room";
+  }
 };
 
 Room.prototype.hooverPosition = function() {
