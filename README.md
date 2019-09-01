@@ -1,6 +1,6 @@
-# Roomba Technical Exercise
+# Robot Hoover Technical Exercise
 
-This is a technical exercise written in JavaScript. The aim is to write a program that will simulate a Roomba (robot vacuum cleaner) navigating a room and hoovering up piles of dirt.
+This is a technical exercise written in JavaScript. The aim is to write a program that will simulate a robot hoover navigating a room and hoovering up piles of dirt.
 
 ## Requirements
 
@@ -10,9 +10,9 @@ This is a technical exercise written in JavaScript. The aim is to write a progra
 
 - Patches of dirt will be input using the same X/Y coordinate format.
 
-- The Roomba's starting position will be input in the same format.
+- The hoover's starting position will be input in the same format.
 
-- The Roomba's driving instructions will be formatted as cardinal directions, i.e. North, South, East and West.
+- The hoover's driving instructions will be formatted as cardinal directions, i.e. North, South, East and West.
 
 ### Input:
 
@@ -27,9 +27,9 @@ The program's input will be a `.txt` file containing all of the above informatio
 NNESEESWNWW
 ```
 - Line 1 is the room dimensions.
-- Line 2 is the Roomba's starting position.
+- Line 2 is the hoover's starting position.
 - Subsequent lines are the locations of dirt patches.
-- The final line is the driving instructions for the Roomba.
+- The final line is the driving instructions for the hoover.
 
 ### Output
 
@@ -39,7 +39,7 @@ The program will then return a simple 2-line output, for example:
 1 3
 1
 ```
-- Line 1 is the final position of the Roomba after it has completed all of its instructions.
+- Line 1 is the final position of the hoover after it has completed all of its instructions.
 - Line 2 is the number of patches of dirt it successfully hoovered up (i.e. occupied the same space as at some point on its journey).
 
 ## Execution
@@ -48,22 +48,22 @@ The first thing I will do with this program is break down the problem into speci
 
 ```
 As a user,
-So that my Roomba can navigate a room,
+So that my hoover can navigate a room,
 I want to be able to input the size of the room.
 ```
 ```
 As a user,
-So that my Roomba can complete its journey as planned,
+So that my hoover can complete its journey as planned,
 I need the room size to be saved after being set.
 ```
 ```
 As a user,
-So that my Roomba can navigate successfully,
+So that my hoover can navigate successfully,
 I need it to record its initial position.
 ```
 At this point I reached my first edge case: what if the start position is not within the bounds of the room? This will need to be tackled. So:
 ```
 As a user,
-So that my Roomba doesn't get confused,
+So that my hoover doesn't get confused,
 I will need to make sure that it can't start outside the room.
 ```
