@@ -30,6 +30,13 @@ Room.prototype.hooverPosition = function() {
   return this._hooverPosition;
 };
 
+Room.prototype.moveHoover = function(direction) {
+  if (direction === "N") {
+    this._hooverPosition[1] += 1;
+  }
+  return this._hooverPosition;
+}
+
 Room.prototype.inputDirtPatch = function(x, y) {
   var dirtPatch = [x, y];
   this._dirtPatches.push(dirtPatch);

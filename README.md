@@ -68,3 +68,13 @@ So that my hoover doesn't get confused,
 I will need to make sure that it can't start outside the room.
 ```
 This will now return an error if the user tries to place the hoover outside of the room. Further down the line I may refactor it so that the start position is moved to the nearest position to that which the user specified.
+```
+As a user,
+So that I can know if the hoover has hit a dirt patch,
+I will need to record the locations of the dirt patches in the room.
+```
+```
+As a user,
+So that the hoover can go on its journey,
+I will need its location to change when it is given an instruction.
+```

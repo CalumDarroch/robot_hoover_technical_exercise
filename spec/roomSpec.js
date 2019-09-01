@@ -44,6 +44,15 @@ describe('Feature tests:', function() {
     room.inputDirtPatch(2, 4);
     room.inputDirtPatch(6, 0);
     expect(room.dirtPatches()).toEqual([[1, 3], [2, 4], [6, 0]])
-  })
+  });
+
+  it('the hoovers Y position is modified by +1 if instructed to move North', function() {
+    room.inputSize(5, 5);
+    room.inputHooverPosition(2, 2);
+    expect(room.moveHoover("N")).toEqual([2, 3]);
+    room.inputSize(21, 18);
+    room.inputHooverPosition(14, 6);
+    expect(room.moveHoover("N")).toEqual([14, 7]);
+  });
 
 });
