@@ -45,6 +45,20 @@ Room.prototype.moveHoover = function(direction) {
   return this._hooverPosition;
 }
 
+Room.prototype.hitDirtPatch = function(hooverPosition) {
+  var i;
+  var length = this._dirtPatches.length;
+  var result;
+  for(i = 0; i < length; i++) {
+    if (hooverPosition[0] === this._dirtPatches[i][0] && hooverPosition[1] === this._dirtPatches[i][1]) {
+      result = true;
+    } else {
+      result = false;
+    }
+  }
+  return result;
+};
+
 Room.prototype.inputDirtPatch = function(x, y) {
   var dirtPatch = [x, y];
   this._dirtPatches.push(dirtPatch);

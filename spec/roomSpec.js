@@ -95,4 +95,10 @@ describe('Feature tests:', function() {
     expect(function() { room.moveHoover("W") }).toThrow(error);
   });
 
+  it('knows if the hoover has hit a dirt patch', function() {
+    room.inputDirtPatch(2, 3);
+    expect(room.hitDirtPatch([2, 3])).toEqual(true);
+    expect(room.hitDirtPatch([2, 4])).toEqual(false);
+  });
+
 });

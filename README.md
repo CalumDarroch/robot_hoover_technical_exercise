@@ -81,3 +81,11 @@ I will need its location to change when it is given an instruction.
 The hoover can now move North, South, East or West when given a single-character string of "N", "S", "E" or "W" as an argument for the function `moveHoover`.
 
 This raises the next edge case: what happens when the hoover is instructed to move outside the bounds of the room, similar to before with its starting position? For now, I will tackle it in a similar way by raising an error if it is instructed to do so.
+
+Finally for the business logic, I must implement a tally for whenever the hoover moves over a dirt patch:
+```
+As a user,
+So that I can know how effective my instructions have been,
+I want to be able to see how many dirt patches the hoover has hoovered up.
+```
+This also introduces another edge case: we don't want the hoover to count the same dirt patch twice!
