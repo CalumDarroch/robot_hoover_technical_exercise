@@ -78,3 +78,6 @@ As a user,
 So that the hoover can go on its journey,
 I will need its location to change when it is given an instruction.
 ```
+The hoover can now move North, South, East or West when given a single-character string of "N", "S", "E" or "W" as an argument for the function `moveHoover`.
+
+This raises the next edge case: what happens when the hoover is instructed to move outside the bounds of the room, similar to before with its starting position? For now, I will tackle it in a similar way by raising an error if it is instructed to do so.

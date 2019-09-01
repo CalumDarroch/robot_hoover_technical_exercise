@@ -31,14 +31,16 @@ Room.prototype.hooverPosition = function() {
 };
 
 Room.prototype.moveHoover = function(direction) {
-  if (direction === "N") {
+  if (direction === "N" && this._hooverPosition[1] < this._size[1]) {
     this._hooverPosition[1] += 1;
-  } else if (direction === "S") {
+  } else if (direction === "S" && this._hooverPosition[1] > 0) {
     this._hooverPosition[1] -= 1;
-  } else if (direction === "E") {
+  } else if (direction === "E" && this._hooverPosition[0] < this._size[0]) {
     this._hooverPosition[0] += 1;
-  } else if (direction === "W") {
+  } else if (direction === "W" && this._hooverPosition[0] > 0) {
     this._hooverPosition[0] -= 1;
+  } else {
+    throw "Hoover cannot move outside of the room";
   }
   return this._hooverPosition;
 }

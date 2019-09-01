@@ -82,4 +82,17 @@ describe('Feature tests:', function() {
     expect(room.moveHoover("W")).toEqual([13, 6]);
   });
 
+  it('hoover cannot move outside the bounds of the room', function() {
+    var error = "Hoover cannot move outside of the room";
+    room.inputSize(5, 5);
+    room.inputHooverPosition(5, 5);
+    expect(function() { room.moveHoover("N") }).toThrow(error);
+    room.inputHooverPosition(5, 0);
+    expect(function() { room.moveHoover("S") }).toThrow(error);
+    room.inputHooverPosition(5, 5);
+    expect(function() { room.moveHoover("E") }).toThrow(error);
+    room.inputHooverPosition(0, 5);
+    expect(function() { room.moveHoover("W") }).toThrow(error);
+  });
+
 });
