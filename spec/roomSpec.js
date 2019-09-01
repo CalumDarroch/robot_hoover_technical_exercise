@@ -55,4 +55,13 @@ describe('Feature tests:', function() {
     expect(room.moveHoover("N")).toEqual([14, 7]);
   });
 
+  it('the hoovers Y position is modified by -1 if instructed to move South', function() {
+    room.inputSize(5, 5);
+    room.inputHooverPosition(2, 2);
+    expect(room.moveHoover("S")).toEqual([2, 1]);
+    room.inputSize(21, 18);
+    room.inputHooverPosition(14, 6);
+    expect(room.moveHoover("S")).toEqual([14, 5]);
+  });
+
 });
