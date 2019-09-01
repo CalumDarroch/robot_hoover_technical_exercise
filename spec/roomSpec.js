@@ -73,4 +73,13 @@ describe('Feature tests:', function() {
     expect(room.moveHoover("E")).toEqual([15, 6]);
   });
 
+  it('the hoovers X position is modified by -1 if instructed to move West', function() {
+    room.inputSize(5, 5);
+    room.inputHooverPosition(2, 2);
+    expect(room.moveHoover("W")).toEqual([1, 2]);
+    room.inputSize(21, 18);
+    room.inputHooverPosition(14, 6);
+    expect(room.moveHoover("W")).toEqual([13, 6]);
+  });
+
 });
