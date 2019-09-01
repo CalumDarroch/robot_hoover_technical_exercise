@@ -42,7 +42,7 @@ The program will then return a simple 2-line output, for example:
 - Line 1 is the final position of the hoover after it has completed all of its instructions.
 - Line 2 is the number of patches of dirt it successfully hoovered up (i.e. occupied the same space as at some point on its journey).
 
-## Execution
+## Approach
 
 The first thing I will do with this program is break down the problem into specific user stories based upon the requirements, tackling the smallest issue first and using TDD to drive the increasing complexity of the program.
 
@@ -67,3 +67,4 @@ As a user,
 So that my hoover doesn't get confused,
 I will need to make sure that it can't start outside the room.
 ```
+This will now return an error if the user tries to place the hoover outside of the room. Further down the line I may refactor it so that the start position is moved to the nearest position to that which the user specified.
