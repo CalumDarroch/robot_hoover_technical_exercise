@@ -60,6 +60,8 @@ node .
 ```
 into your terminal, and you will see your results!
 
+__Note__: If you're having issues running the program, look at the "Notes / Improvements" section at the end of this README to see if the problem is covered there.
+
 ## Approach
 
 ### Business logic
@@ -110,11 +112,22 @@ I want to be able to see how many dirt patches the hoover has hoovered up.
 ```
 This also introduces another edge case: we don't want the hoover to count the same dirt patch twice! Once a patch has been hit it will be removed from the array of dirt patches.
 
+Finally, I refactored so no error is thrown when the hoover tries to move outside the room, it just stays stationary.
 
-Installed Node.js. Used `fs` module to split text file.
+### Index
 
-Parsing: text is split around `\r\n`: you may need to change this for it to work on your system.
+To run the app, I needed to create an `index.js` file to interact with the model and display the user's results in the terminal. To do this, I Installed Node.js. and used its built-in `fs` module to split text file using the `readFileSync` [function](https://nodejs.org/api/fs.html#fs_fs_readfilesync_path_options).
 
-Had to update Room with module pattern so it could be exported.
+I then parsed the file into a 2D array, containing a number of arrays with 2 integer elements, and a final array with the directions as strings. I have annotated the `index.js` file for more info on how I achieved this.
 
-Finally, refactor so no error thrown when hoover tries to move outside the room, it just stays stationary.
+After that, I simply applied the module pattern to `room.js` so I could require it as a module in the index, and passed it the relevant arrays as arguments for its functions before finally printing the desired output to the terminal using `console.log()`.
+
+## Notes / Improvements
+
+- If you try to place the starting position of the hooved outside the bounds of the room, the program will return an error.
+- The Jasmine tests do not run properly unless you comment out the final line of `room.js`:
+```javascript
+module.exports = Room;
+```
+I'm not entirely sure why, and would try to fix this problem if given more time.
+- When parsing the .txt file I had to split the text around `\r\n`. The `\r` escape character (or "return carriage") may not be used if you are running Linux/MacOS, so you may need to remove it from line 6 of `index.js` for the program to work on your system.
