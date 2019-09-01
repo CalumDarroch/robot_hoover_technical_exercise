@@ -44,6 +44,8 @@ The program will then return a simple 2-line output, for example:
 
 ## Approach
 
+### Business logic
+
 The first thing I will do with this program is break down the problem into specific user stories based upon the requirements, tackling the smallest issue first and using TDD to drive the increasing complexity of the program.
 
 ```
